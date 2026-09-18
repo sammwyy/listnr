@@ -1,2 +1,2 @@
-/build
-/listnr
+/target/
+/cache.db

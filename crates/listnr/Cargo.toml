@@ -1,0 +1,24 @@
+[package]
+name = "listnr"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "A GStreamer music player with a CLI, TUI, and embeddable headless protocol"
+
+[features]
+default = ["gstreamer"]
+gstreamer = ["listnr-core/gstreamer"]
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+crossbeam-channel.workspace = true
+listnr-core = { path = "../listnr-core", default-features = false }
+listnr-types = { path = "../listnr-types" }
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+ratatui = "0.29"
+crossterm = "0.28"
+ratatui-image = { version = "8.0.1", default-features = false, features = ["crossterm"] }
+image = { version = "0.25.6", default-features = false, features = ["jpeg", "png", "webp"] }

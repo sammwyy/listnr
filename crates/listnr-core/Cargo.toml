@@ -1,0 +1,26 @@
+[package]
+name = "listnr-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = ["gstreamer"]
+gstreamer = ["dep:gstreamer"]
+
+[dependencies]
+anyhow.workspace = true
+crossbeam-channel.workspace = true
+serde.workspace = true
+listnr-types = { path = "../listnr-types" }
+rusqlite = { version = "0.37", features = ["bundled"] }
+walkdir = "2.5"
+lofty = "0.22"
+tracing.workspace = true
+thiserror.workspace = true
+directories = "6.0"
+toml = "0.9"
+gstreamer = { version = "0.24", optional = true }
+
+[dev-dependencies]
+tempfile = "3.24"
